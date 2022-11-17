@@ -4,7 +4,7 @@ from django.db import models
 class Fruit(models.Model):
     type = models.CharField(max_length=25)
     color = models.CharField(max_length=40)
-    is_ripe = models.BooleanField
+    is_ripe = models.BooleanField(default=1)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -19,8 +19,8 @@ class Fruit(models.Model):
 class Pet(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=40)
-    age = models.IntegerField
-    is_adoptable = models.BooleanField
+    age = models.IntegerField(default=1)
+    is_adoptable = models.BooleanField(default=1)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

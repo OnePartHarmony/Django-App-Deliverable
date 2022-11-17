@@ -1,7 +1,9 @@
-# from django.urls import path
-# from .views import DoctorsView, DoctorDetailView
+from django.urls import path
+from .views import FruitsView, FruitDetailView, PetsView, PetDetailView
 
-# urlpatterns = [
-#     path('doctors/', DoctorsView.as_view(), name='doctors_index'),
-#     path('doctors/<int:pk>/', DoctorDetailView.as_view(), name='doctor_show')
-# ]
+urlpatterns = [
+    path('fruits/', FruitsView.as_view(), name='fruits_index_and_create'),
+    path('fruits/<int:pk>/', FruitDetailView.as_view(), name='fruits_show_update_and_delete'),
+    path('pets/', PetsView.as_view(), name='pets_index_and_create'),
+    path('pets/<int:pk>/', PetDetailView.as_view(), name='pets_show_update_and_delete')
+]
