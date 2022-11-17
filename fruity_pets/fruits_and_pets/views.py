@@ -24,7 +24,23 @@ class FruitsView(APIView):
 
 class FruitDetailView(APIView):
     """View class at fruits/:pk/ for showing, updating, and deleting fruits."""
-    pass
+    def get(self, request, pk):
+        fruit = get_object_or_404(Fruit, pk=pk)
+        serializer = FruitSerializer(fruit)
+        return Response({"fruit": serializer.data})
+
+    def patch(self, request, pk):
+        fruit = get_object_or_404(Fruit, pk=pk)
+        serializer = FruitSerializer(fruit, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request,pk):
+        fruit = get_object_or_404(Fruit, pk=pk)
+        fruit.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 
@@ -45,4 +61,20 @@ class PetsView(APIView):
 
 class PetDetailView(APIView):
     """View class at pets/:pk/ for showing, updating, and deleting pets."""
-    pass
+    def get(self, request, pk):
+        pet = get_object_or_404(Pet, pk=pk)
+        serializer = PetSerializer(pet)
+        return Response({"pet": serializer.data})
+
+    def patch(self, request, pk):
+        pet = get_object_or_404(Pet, pk=pk)
+        serializer = PetSerializer(pet, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request,pk):
+        pet = get_object_or_404(Pet, pk=pk)
+        pet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
