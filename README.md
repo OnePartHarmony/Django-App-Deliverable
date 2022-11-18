@@ -17,7 +17,7 @@ This is an app for practicing CRUD in Django.  It contains two unrelated models,
 
 ## Models
 
-| Fruits                   |
+| <td colspan=2>Fruits     |
 |--------------------------|
 | id         | primary key |
 | type       | string      |
