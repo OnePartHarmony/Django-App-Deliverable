@@ -79,29 +79,31 @@ This is an app for practicing CRUD in Django.  It contains two unrelated models,
     <td>integer</td>
     <td>profession</td>
     <td>string</td>
+    <td>is_squeaky</td>
+    <td>boolean</td>
   </tr>
   <tr>
     <td>is_adoptable</td>
     <td>boolean</td>
     <td>created_at</td>
     <td>datetime</td>
-    <td>is_squeaky</td>
-    <td>boolean</td>
+    <td>pet_id</td>
+    <td>foreign key</td>
   </tr>
   <tr>
     <td>owner_id</td>
     <td>foreign key</td>
     <td>updated_at</td>
     <td>datetime</td>
-    <td>pet_id</td>
-    <td>foreign key</td>
+    <td>created_at</td>
+    <td>datetime</td>
   </tr>
   <tr>
     <td>created_at</td>
     <td>datetime</td>
     <td></td>
     <td></td>
-    <td>created_at</td>
+    <td>updated_at</td>
     <td>datetime</td>
   </tr>
   <tr>
@@ -109,8 +111,8 @@ This is an app for practicing CRUD in Django.  It contains two unrelated models,
     <td>datetime</td>
     <td></td>
     <td></td>
-    <td>updated_at</td>
-    <td>datetime</td>
+    <td></td>
+    <td></td>    
   </tr>
 </table>
 
