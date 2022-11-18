@@ -119,4 +119,4 @@ This is an app for practicing CRUD in Django.  It contains two unrelated models,
 
 ## Instructions
 
-Install required packages: django, psycopg2-binary, djangorestframework
+Install required packages:<br>django,<br>psycopg2-binary,<br>djangorestframework
