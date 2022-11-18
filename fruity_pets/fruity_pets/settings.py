@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'fruity_pets.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fruity-pets',
+        'NAME': 'new_db',
     }
 }
 
